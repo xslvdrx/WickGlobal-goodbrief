@@ -1,0 +1,191 @@
+:root {
+--opacity: #21232900;
+--brightred: #f94230;
+--purple: purple;
+--lightred: #f9433dcc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+body, html {
+    height: 100vh;
+  }
+  
+.parallax {
+    /* The image used */
+    background-image: url('img/pexels-bradley-hook-111085.jpg');
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main {
+    background-color: rgba(128, 0, 128, 0.4);
+    width: 40%;
+    height: auto;
+    display: flex;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    border-radius: 15px;   
+}
+
+.main-info {
+    padding: 15px;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-info h1 {
+    padding: 10px;
+}
+
+/*  ---------------- NAVBAR -------------  */
+
+.nav-container {
+    position: fixed;
+    width: 100%;
+    background-color: var(--opacity);
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 0.5fr auto 1fr;
+    align-items: center;
+    height: 50px;
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: 0 64px;
+}
+
+#navbar-logo {
+    color: var(--purple);
+}
+
+#navbar-logo {
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-self: end;
+}
+
+.nav-links {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.nav-links:hover {
+    color: var(--brightred);
+    transition: all 0.5s ease-out;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.5s ease-in-out;
+    background: var(--purple);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: grid;
+        grid-template-columns: auto;
+        background: var(--brightred);
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0; 
+        transition: all 0.5s ease;
+    }
+
+    #navbar-logo {
+        margin-left: 20px;
+    }
+
+    .nav-menu.active {
+        background: var(--opacity);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        line-height: 60px;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover {
+        background-color: var(--brightred);
+        color: var(--purple);
+        transition: all 0.5s ease-out;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%0);
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .main {
+        width: 80%;
+        height: auto;
+        top: 20%;
+        align-items: center;
+        left: 10%;
+        border-radius: 15px;   
+    }
+}
+
+
